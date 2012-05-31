@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+typedef float v4sf __attribute__ ((vector_size (16)));
+
+float Dot(v4sf lhs, v4sf rhs)
+{
+	v4sf temp = lhs * rhs;
+	float register val = temp[0] + temp[1];
+	val += temp[2];
+	val += temp[3];
+}
+
+int main(){}
