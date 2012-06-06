@@ -18,4 +18,3 @@ BoundingVolumes -
 Collision - 
 	includes Geometry
 	Purpose this contains the functions associated for detecting collisions between Geometry and BoundingVolumes.
-	functions - tests for different types.

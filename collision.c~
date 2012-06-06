@@ -226,3 +226,5 @@ int TriangleInAABB(Point a, Point b, Point c, AABB val)
 {
 	return PointInAABB(a,val) & PointInAABB(b,val) & PointInAABB(c,val);
 }
+
+
