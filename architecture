@@ -12,7 +12,7 @@ Geometry -
 BoundingVolumes -
 	includes Geometry
 	purpose - this library is for the various structures associated with bounding volumes used for culling.
-	data types - AABB, OBB, BoundSphere.
+	data types - AABB, OBB, BoundSphere, static Octree, dynamic Octree.
 	functions - Create{AABB,OBB,BoundSphere}(Mesh,triangle,sphere,Point[]).
 
 Collision - 
