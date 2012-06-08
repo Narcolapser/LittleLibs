@@ -2,7 +2,7 @@
 #	Purpose - this contains the data types and associated maths for the representation of 2D and 3D geometry. 
 #	data types - Point, Vector, BarycentricCoordinate(BC), Ray, LineSegment, AABB, Sphere, Plane, Triangle, Mesh, VoronoiRegion, tMatrix, Quaternion.
 #	functions - GeometryType + Vector = GeometryType(translated). BC * (Point, Point, Point) = Point, Vector by axis = Quaternion.
-import linearAlgebra
+from linearAlgebra import *
 
 class Point(Vec3):
 	def translate(self,vec):
@@ -55,12 +55,14 @@ class Plane:
 	def __init__(self,n,d):
 		self.n = n
 		self.d = d
+		self.n.Normalize()
 
 	def translate(self,vec):
 		self.n.translate(vec)
 
 def ComputePlane(a,b,c):
-	n = (b-a).Cross(c-a).normalize()
+	n = (b-a).Cross(c-a)
+	n.Normalize()
 	d = n.Dot(a)
 	return(Plane(n,d))
 

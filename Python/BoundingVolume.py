@@ -1,7 +1,7 @@
 #	data types - AABB, OBB, BoundSphere, static Octree, dynamic Octree.
 #	functions - Create{AABB,OBB,BoundSphere}(Mesh,triangle,sphere,Point[]).
-
-import Geometry
+from linearAlgebra import *
+from Geometry import *
 
 class AABB:
 	def __init__(self,ma,mi):

@@ -120,7 +120,7 @@ class Matrix3x3:
 	def __sub__(self,val):
 		return Matrix3x3(self.a-val.a,self.b-val.b,self.c+val.c)
 
-class Matrix 4x4:
+class Matrix4x4:
 	def __init__(self,a,b,c):
 		self.a = a
 		self.b = b
