@@ -27,10 +27,9 @@ class BC(Vec3):
 		return a+b+c
 
 class Ray:
-	def __init__(self,loc,d,distanceClip=1000):
+	def __init__(self,loc,d):
 		self.loc = loc
 		self.d = d
-		self.clip = distanceClip
 
 	def translate(self,vec):
 		self.loc.translate(vec)

@@ -109,7 +109,7 @@ def IntersectSegTriangle(seg,tri):
 	if isinstance(seg,LineSegment):
 		x,y = seg.a,seg.b
 	else:
-		x,y = seg.loc,seg.loc + seg.d.Scale(seg.clip)
+		x,y = seg.loc,seg.loc + seg.d.Scale(1000)
 	a,b,c = tri.a,tri.b,tri.c
 
 	xy = y - x
