@@ -3,6 +3,8 @@
 #	data types - vec2,vec3,vec4,matrix2x2,matrix3x3,matrix4x4.
 #	functions - vecx(+,-,*,dot,cross(only for vec3), matrixx(+,-,*,det,inverse)
 
+EPSILON = 4.94065645841e-324
+
 class Vec2:
 	def __init__(self,x,y):
 		self.x = x
@@ -27,6 +29,7 @@ class Vec2:
 		w = self.Magnitude()
 		self.x /= w
 		self.y /= w
+		return self
 
 class Vec3:
 	def __init__(self,x,y,z):
@@ -60,6 +63,7 @@ class Vec3:
 		self.x /= w
 		self.y /= w
 		self.z /= w
+		return self
 
 class Vec4:
 	def __init__(self,x,y,z,w):
@@ -89,6 +93,7 @@ class Vec4:
 		self.y /= w
 		self.z /= w
 		self.w /= w
+		return self
 
 class Matrix2x2:
 	def __init__(self,a,b):
