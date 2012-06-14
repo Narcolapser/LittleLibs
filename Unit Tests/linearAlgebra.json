@@ -1,71 +1,74 @@
 {
-	"test":
+"tests":
+[
 	{
 		"function":	"+",
 		"argc":		"2",
 		"args":
 		[
-			"Vec2",
 			{
+				"testType":"Vec2",
 				"x":5,
 				"y":6
-			}
-			"Vec2",
+			},
 			{
+				"testType":"Vec2",
 				"x":10,
-				"y":-6,
+				"y":-6
 			}
 		],
-		"resultType":"Vec2",
 		"result":
 		{
+			"testType":"Vec2",
 			"x":15,
 			"y":0
 		}
 	},
-	"test":
 	{
 		"function":	"-",
 		"argc":		"2",
 		"args":
 		[
-			"Vec2",
 			{
+				"testType":"Vec2",
 				"x":5,
 				"y":6
-			}
-			"Vec2",
+			},
 			{
+				"testType":"Vec2",
 				"x":10,
-				"y":-6,
+				"y":-6
 			}
 		],
-		"resultType":"Vec2",
 		"result":
 		{
+			"testType":"Vec2",
 			"x":5,
 			"y":12
 		}
 	},
-	"test":
 	{
 		"function":	"Scale",
 		"argc":		"2",
 		"args":
 		[
-			"Vec2"
 			{
+				"testType":"Vec2",
 				"x":0,
 				"y":5
+			},
+			{
+				"testType":"float",
+				"val":5.0
 			}
-			"float",
-			5.0
 		],
-		"resultType":"Vec2",
 		"result":
 		{
+			"testType":"Vec2",
 			"x":0,
 			"y":25
 		}
 	}
+]
+
 }

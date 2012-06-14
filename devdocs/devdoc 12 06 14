@@ -1,0 +1,12 @@
+Quick description of how my unit tests work:
+the .json file will contain a root object called "tests" which will be an array. the array is made up of objects containing:
+> function:	A string representation of the function. e.g. "scale", "insert", "remove", "+", "start", etc.
+> argc:		a numeric value of the number of arguments.
+> argv:		Change in plans from what I commented out below. Heres what I'm going to do now instead. This is still an array of objects, but instead of 2 indices per, i'm going to have just 1. how i'll get around the necessary typing is i'm going to have one of the flags in the object itself be "testType" which will declare its type. The reason why I switched to this is that I realized that nested types wouldn't very easy to describe with my previous method. This way I can do the parsing recusively. 
+
+/*the objects that are the arguments. there are actually 2 indices per argument, the first is the argument type ("Vec2", "float", "picture",etc) the second is the actual argument. this is done to avoid ambiguity that can result from data types that can have identical string respresentation (like float and int). as well as provide facilities to languages that are not dynamically typed to be able to read in the type correctly.
+> resultType:	declaration of what the value to be returned should be. for dynamically typed languages this provides a test for accuracy, for none dynamically typed languages this will make sure it has the right type ready to catch the returned value.*/
+
+> result:	what the resulting value should be, if the returned value and result match, the test is passed.
+
+If the language is object oriented, which all but C are, the first argument will always be assumed to be the argument that the method is being called on. so if the first argument foo is of type Vec2, the method would be called like foo.function(args). in contrast to how it will have to work with c which is function(foo,args);.

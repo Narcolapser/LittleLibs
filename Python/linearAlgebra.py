@@ -31,6 +31,9 @@ class Vec2:
 		self.y /= w
 		return self
 
+def Vec2FromJson(json):
+	return Vec2(json['x'],json['y'])
+
 class Vec3:
 	def __init__(self,x,y,z):
 		self.x = x
