@@ -1,0 +1,71 @@
+{
+	"test":
+	{
+		"function":	"+",
+		"argc":		"2",
+		"args":
+		[
+			"Vec2",
+			{
+				"x":5,
+				"y":6
+			}
+			"Vec2",
+			{
+				"x":10,
+				"y":-6,
+			}
+		],
+		"resultType":"Vec2",
+		"result":
+		{
+			"x":15,
+			"y":0
+		}
+	},
+	"test":
+	{
+		"function":	"-",
+		"argc":		"2",
+		"args":
+		[
+			"Vec2",
+			{
+				"x":5,
+				"y":6
+			}
+			"Vec2",
+			{
+				"x":10,
+				"y":-6,
+			}
+		],
+		"resultType":"Vec2",
+		"result":
+		{
+			"x":5,
+			"y":12
+		}
+	},
+	"test":
+	{
+		"function":	"Scale",
+		"argc":		"2",
+		"args":
+		[
+			"Vec2"
+			{
+				"x":0,
+				"y":5
+			}
+			"float",
+			5.0
+		],
+		"resultType":"Vec2",
+		"result":
+		{
+			"x":0,
+			"y":25
+		}
+	}
+}

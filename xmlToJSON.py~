@@ -1,0 +1,33 @@
+import json
+import sys
+
+def xmlToObjects(xml):
+	opening = xml.find('<')
+	tagS = xml.find(' ',2)
+	tagC = xml.find('>',2)
+	if tagS == -1:
+		if tagC == -1:
+			return None
+		else:
+			tag = tagC
+	else:
+		if tagC == -1:
+			tag = tagS
+		else:
+			if tagC > tagS: tag = tagS
+			else:		tag = tagC
+		
+
+f = open(sys.argv[1],'r')
+
+xml = f.read()
+
+obs = xmlToObjects(xml)
+
+f.close()
+
+f = open(sys.argv[2],'w')
+
+f.write(json.dumps(obs))
+
+f.close()
