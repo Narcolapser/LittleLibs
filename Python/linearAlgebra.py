@@ -16,6 +16,12 @@ class Vec2:
 	def __sub__(self,val):
 		return Vec2(self.x-val.x,self.y-val.y)
 
+	def __eq__(self,val):
+		return self.x == val.x and self.y == val.y
+
+	def __str__(self):
+		return "X: " + str(self.x) + " Y: " + str(self.y)
+
 	def Scale(self,val):
 		return Vec2(self.x*val,self.y*val)
 
