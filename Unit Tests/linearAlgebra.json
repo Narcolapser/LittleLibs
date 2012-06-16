@@ -40,7 +40,29 @@
 			"result":{"testType":"bool","val":true}
 		},
 		{
-			"testName":	"less than fail",
+			"testName":	"Greater than fail",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":-1,"y":-1},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":-1,"y":-1},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Less than fail",
 			"function":	"<",
 			"argc":		2,
 			"args":
@@ -49,6 +71,204 @@
 				{"testType":"Vec2","x":0,"y":0}
 			],
 			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than stagger right",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":2},
+				{"testType":"Vec2","x":2,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than stagger left",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":0},
+				{"testType":"Vec2","x":0,"y":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than stagger right",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":2},
+				{"testType":"Vec2","x":2,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than stagger left",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":0},
+				{"testType":"Vec2","x":0,"y":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than stagger right",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":2},
+				{"testType":"Vec2","x":2,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than when equal fail",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":2,"y":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than when equal fail",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":2,"y":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Greater than or equal to fail",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":-1,"y":-1},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than or equal to",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":-1,"y":-1},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Less than or equal to fail",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to stagger right",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":2},
+				{"testType":"Vec2","x":2,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to stagger left",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":0},
+				{"testType":"Vec2","x":0,"y":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than or equal to stagger right",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":2},
+				{"testType":"Vec2","x":2,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than or equal to stagger left",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":0},
+				{"testType":"Vec2","x":0,"y":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to stagger right",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":2},
+				{"testType":"Vec2","x":2,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to when equal",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":2,"y":2}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Less than or equal to when equal ",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":2,"y":2}
+			],
+			"result":{"testType":"bool","val":true}
 		},
 		{
 			"testName":	"Addition",
@@ -154,6 +374,389 @@
 			"args":
 			[
 				{"testType":"Vec2","x":1,"y":1},
+				{"testType":"float","val":2}
+			],
+			"result":{"testType":"Exception"}
+		}
+	]
+	},
+
+
+
+
+	{
+	"phaseName":	"Vec3 common cases.",
+	"tests":
+	[
+		
+		{
+			"testName":	"Equal",
+			"function":	"==",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec3","x":5,"y":6,"z":7},
+				{"testType":"Vec3","x":5,"y":6,"z":7}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Equal fail",
+			"function":	"==",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":1,"y":1,"z":1},
+				{"testType":"Vec3","x":2,"y":2,"z":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":2},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Greater than fail",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":-1,"y":-1,"z":-1},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":-1,"y":-1,"z":-1},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Less than fail",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":2},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than stagger right",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":2,"z":0},
+				{"testType":"Vec3","x":2,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than stagger left",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":0,"z":0},
+				{"testType":"Vec3","x":0,"y":2,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than stagger right",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":2,"z":0},
+				{"testType":"Vec3","x":2,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than stagger left",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":0,"z":0},
+				{"testType":"Vec3","x":0,"y":2,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than stagger right",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":2,"z":0},
+				{"testType":"Vec3","x":2,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than when equal fail",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":2},
+				{"testType":"Vec3","x":2,"y":2,"z":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than when equal fail",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":2},
+				{"testType":"Vec3","x":2,"y":2,"z":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":2},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Greater than or equal to fail",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":-1,"y":-1,"z":-1},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than or equal to",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":-1,"y":-1,"z":-1},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Less than or equal to fail",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":2},
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to stagger right",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":2,"z":0},
+				{"testType":"Vec3","x":2,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to stagger left",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":0,"z":0},
+				{"testType":"Vec3","x":0,"y":2,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than or equal to stagger right",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":2,"z":0},
+				{"testType":"Vec3","x":2,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Less than or equal to stagger left",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":0,"z":0},
+				{"testType":"Vec3","x":0,"y":2,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to stagger right",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":2,"z":0},
+				{"testType":"Vec3","x":2,"y":0,"z":0}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than or equal to when equal",
+			"function":	">=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":0},
+				{"testType":"Vec3","x":2,"y":2,"z":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Less than or equal to when equal ",
+			"function":	"<=",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":2,"y":2,"z":2},
+				{"testType":"Vec3","x":2,"y":2,"z":2}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Addition",
+			"function":	"+",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec3","x":5,"y":6,"z":7},
+				{"testType":"Vec3","x":10,"y":-6,"z":4}
+			],
+			"result":{"testType":"Vec3","x":15,"y":0,"z":11}
+		},
+		{
+			"testName":	"Subraction",
+			"function":	"-",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec3","x":5,"y":6,"z":7},
+				{"testType":"Vec3","x":10,"y":-6,"z":4}
+			],
+			"result":{"testType":"Vec3","x":-5,"y":12,"z":3}
+		},
+		{
+			"testName":	"Scaling",
+			"function":	"Scale",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":5,"z":-5},
+				{"testType":"float","val":5.0}
+			],
+			"result":{"testType":"Vec3","x":0,"y":25,"z":-25}
+		},
+		{
+			"testName":	"Dot product",
+			"function":	"Dot",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec3","x":5,"y":10,"z":3},
+				{"testType":"Vec3","x":5,"y":2,"z":7}
+			],
+			"result":{"testType":"float","val":66}
+		},
+		{
+			"testName":	"Magnitude",
+			"function":	"Magnitude",
+			"argc":		"1",
+			"args":
+			[
+				{"testType":"Vec3","x":3,"y":4,"z":5}
+			],
+			"result":{"testType":"float","val":7.07106781187}
+		},
+		{
+			"testName":	"Normalization",
+			"function":	"Normalize",
+			"argc":		"1",
+			"args":
+			[
+				{"testType":"Vec3","x":5,"y":5,"z":5}
+			],
+			"result":{"testType":"Vec3","x":0.333333333333,"y":0.333333333333,"z":0.333333333333}
+		}
+	]
+	},
+	{
+	"phaseName":	"Vec3 edge cases.",
+	"tests":
+	[
+		{
+			"testName":	"Zero Scaler",
+			"function":	"Scale",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":3,"y":4,"z":5},
+				{"testType":"float","val":0}
+			],
+			"result":{"testType":"Vec3","x":0,"y":0,"z":0}
+		},
+		{
+			"testName":	"Normalize Zero",
+			"function":	"Normalize",
+			"argc":		1,
+			"args":
+			[
+				{"testType":"Vec3","x":0,"y":0,"z":0}
+			],
+			"result":{"testType":"Vec3","x":0,"y":0,"z":0}
+		}
+	]
+	},
+	{
+	"phaseName":	"Vec3 Fail Cases",
+	"tests":
+	[
+		{
+			"testName":	"Vec3 compared to float",
+			"function":	"==",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec3","x":1,"y":1,"z":1},
 				{"testType":"float","val":2}
 			],
 			"result":{"testType":"Exception"}
