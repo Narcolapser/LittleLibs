@@ -35,28 +35,48 @@ f = open(mod+'.py','r')
 
 jin = open('../Unit Tests/' + mod+'.json','r')
 j = jin.read()
-
-tests = json.loads(j)['tests']
 tmod = eval('importCode(f,"'+ mod +'.py",1)')
 
-for test in tests:
-	obJson = test['args'][0]
-	ob = eval('tmod.'+obJson['testType']+'FromJson(obJson)')
-	args = "("
-	argvs = []
-	for i,arg in enumerate(test['args'][1:]):
-		if "float int string bool".find(arg['testType']) == -1:
-			argvs.append(eval('tmod.'+arg['testType']+'FromJson(arg)'))
+phases = json.loads(j)['phases']
+testsPassed = True
+print "\nTesting library: " + mod + ".py\n"
+for phase in phases:
+	print "begining phase: " + phase['phaseName']
+	phasePass = True
+	for test in phase['tests']:
+		obJson = test['args'][0]
+		ob = eval('tmod.'+obJson['testType']+'FromJson(obJson)')
+		args = "("
+		argvs = []
+		for i,arg in enumerate(test['args'][1:]):
+			if "float int string bool".find(arg['testType']) == -1:
+				argvs.append(eval('tmod.'+arg['testType']+'FromJson(arg)'))
+			else:
+				argvs.append(arg['val'])
+			args += "argvs["+str(i)+"],"
+		if (len(args)==1):
+			args+= ")"
 		else:
-			argvs.append(arg['val'])
-		args += "argvs["+str(i)+"],"
-	args = args[:-1]+")"
-	if "+-**/>=<==".find(test['function']) != -1:
-		result = eval('ob '+test['function']+' argvs[0]')
+			args = args[:-1]+")"
+		if "+-**/>=<==".find(test['function']) != -1:
+			result = eval('ob '+test['function']+' argvs[0]')
+		else:
+			result = eval("ob."+test['function']+args)
+		if "float int string bool".find(test['result']['testType']) == -1:
+			expect = eval('tmod.'+test['result']['testType']+'FromJson(test["result"])')
+		else:
+			expect = test['result']['val']
+		if result == expect:
+			print "passed: " + test['testName']
+		else:
+			print "fail: "+test['testName'] + ", got: " + str(result) + " expected: " + str(expect)
+			phasePass = False
+	if phasePass:
+		print "Phase sucessefully completed.\n"
 	else:
-		result = eval("ob."+test['function']+args)
-	if result == eval('tmod.'+test['result']['testType']+'FromJson(test["result"])'):
-		print "pass"
-	else:
-		print "fail, got: " + str(result) + " expected: " + str(eval('tmod.'+test['result']['testType']+'FromJson(test["result"])'))
-	
+		print "Phase was not sucessful.\n"
+		testsPassed = False
+if testsPassed:
+	print "All tests completed sucessfully, library is correct."
+else:
+	print "Not all tests were completed sucessfully, review code."

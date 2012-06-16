@@ -1,74 +1,114 @@
 {
-"tests":
+"phases":
 [
 	{
-		"function":	"+",
-		"argc":		"2",
-		"args":
-		[
-			{
-				"testType":"Vec2",
-				"x":5,
-				"y":6
-			},
-			{
-				"testType":"Vec2",
-				"x":10,
-				"y":-6
-			}
-		],
-		"result":
+	"phaseName":	"Vec2 common cases.",
+	"tests":
+	[
+		
 		{
-			"testType":"Vec2",
-			"x":15,
-			"y":0
+			"testName":	"boolean equality",
+			"function":	"==",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec2","x":5,"y":6},
+				{"testType":"Vec2","x":5,"y":6}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Addition",
+			"function":	"+",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec2","x":5,"y":6},
+				{"testType":"Vec2","x":10,"y":-6}
+			],
+			"result":{"testType":"Vec2","x":15,"y":0}
+		},
+		{
+			"testName":	"Subraction",
+			"function":	"-",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec2","x":5,"y":6},
+				{"testType":"Vec2","x":10,"y":-6}
+			],
+			"result":{"testType":"Vec2","x":-5,"y":12}
+		},
+		{
+			"testName":	"Scaling",
+			"function":	"Scale",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":5},
+				{"testType":"float","val":5.0}
+			],
+			"result":{"testType":"Vec2","x":0,"y":25}
+		},
+		{
+			"testName":	"Dot product",
+			"function":	"Dot",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec2","x":5,"y":10},
+				{"testType":"Vec2","x":5,"y":2}
+			],
+			"result":{"testType":"float","val":45}
+		},
+		{
+			"testName":	"Magnitude",
+			"function":	"Magnitude",
+			"argc":		"1",
+			"args":
+			[
+				{"testType":"Vec2","x":3,"y":4}
+			],
+			"result":{"testType":"float","val":5}
+		},
+		{
+			"testName":	"Normalization",
+			"function":	"Normalize",
+			"argc":		"1",
+			"args":
+			[
+				{"testType":"Vec2","x":5,"y":5}
+			],
+			"result":{"testType":"Vec2","x":0.5,"y":0.5}
 		}
+	]
 	},
 	{
-		"function":	"-",
-		"argc":		"2",
-		"args":
-		[
-			{
-				"testType":"Vec2",
-				"x":5,
-				"y":6
-			},
-			{
-				"testType":"Vec2",
-				"x":10,
-				"y":-6
-			}
-		],
-		"result":
+	"phaseName":	"Vec2 edge cases.",
+	"tests":
+	[
 		{
-			"testType":"Vec2",
-			"x":-5,
-			"y":12
-		}
-	},
-	{
-		"function":	"Scale",
-		"argc":		"2",
-		"args":
-		[
-			{
-				"testType":"Vec2",
-				"x":0,
-				"y":5
-			},
-			{
-				"testType":"float",
-				"val":5.0
-			}
-		],
-		"result":
+			"testName":	"Zero Scaler",
+			"function":	"Scale",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":3,"y":4},
+				{"testType":"float","val":0}
+			],
+			"result":{"testType":"Vec2","x":0,"y":0}
+		},
 		{
-			"testType":"Vec2",
-			"x":0,
-			"y":25
+			"testName":	"Normalize Zero",
+			"function":	"Normalize",
+			"argc":		1,
+			"args":
+			[
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"Vec2","x":0,"y":0}
 		}
+	]
 	}
 ]
-
 }

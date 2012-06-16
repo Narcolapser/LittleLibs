@@ -3,12 +3,14 @@
 #	data types - vec2,vec3,vec4,matrix2x2,matrix3x3,matrix4x4.
 #	functions - vecx(+,-,*,dot,cross(only for vec3), matrixx(+,-,*,det,inverse)
 
+import math
+
 EPSILON = 4.94065645841e-324
 
 class Vec2:
 	def __init__(self,x,y):
-		self.x = x
-		self.y = y
+		self.x = x * 1.0
+		self.y = y * 1.0
 
 	def __add__(self,val):
 		return Vec2(self.x+val.x,self.y+val.y)
@@ -29,10 +31,11 @@ class Vec2:
 		return self.x*val.x + self.y*val.y
 
 	def Magnitude(self):
-		return self.Dot(self)
+		return math.sqrt(self.Dot(self))
 
 	def Normalize(self):
-		w = self.Magnitude()
+		w = self.x + self.y
+		if w == 0 and self.x == 0: return self
 		self.x /= w
 		self.y /= w
 		return self

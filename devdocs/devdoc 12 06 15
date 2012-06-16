@@ -1,0 +1,3 @@
+I'm making another small change to the unit test json. For better readability of the unit test out puts, I'm adding "phases" and "names" to each phase and test.
+
+Everything is falling into place. But now I've got the joy of having to create tons and tons of unit tests. for each data type there are 3 sets of unit tests. the common case, the edge cases, and the beyond the edge cases. That is a lot of unit tests to tackle. TT_TT I'm going to ask reddit what it thinks is a good way to come up with unit tests.
