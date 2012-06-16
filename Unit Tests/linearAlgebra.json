@@ -7,7 +7,7 @@
 	[
 		
 		{
-			"testName":	"boolean equality",
+			"testName":	"Equal",
 			"function":	"==",
 			"argc":		"2",
 			"args":
@@ -16,6 +16,39 @@
 				{"testType":"Vec2","x":5,"y":6}
 			],
 			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"Equal fail",
+			"function":	"==",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":1,"y":1},
+				{"testType":"Vec2","x":2,"y":2}
+			],
+			"result":{"testType":"bool","val":false}
+		},
+		{
+			"testName":	"Greater than",
+			"function":	">",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":true}
+		},
+		{
+			"testName":	"less than fail",
+			"function":	"<",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":2,"y":2},
+				{"testType":"Vec2","x":0,"y":0}
+			],
+			"result":{"testType":"bool","val":false}
 		},
 		{
 			"testName":	"Addition",
@@ -107,6 +140,23 @@
 				{"testType":"Vec2","x":0,"y":0}
 			],
 			"result":{"testType":"Vec2","x":0,"y":0}
+		}
+	]
+	},
+	{
+	"phaseName":	"Vec2 Fail Cases",
+	"tests":
+	[
+		{
+			"testName":	"Vec2 compared to float",
+			"function":	"==",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec2","x":1,"y":1},
+				{"testType":"float","val":2}
+			],
+			"result":{"testType":"Exception"}
 		}
 	]
 	}

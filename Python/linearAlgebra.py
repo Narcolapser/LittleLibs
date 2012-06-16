@@ -21,6 +21,21 @@ class Vec2:
 	def __eq__(self,val):
 		return self.x == val.x and self.y == val.y
 
+	def __ne__(self,val):
+		return not self == val
+
+	def __lt__(self,val):
+		return self.x < val.x and self.y < val.y
+
+	def __le__(self,val):
+		return self < val or self == val
+
+	def __gt__(self,val):
+		return self.x > val.x and self.y > val.y
+
+	def __ge__(self,val):
+		return self > val or self == val
+
 	def __str__(self):
 		return "X: " + str(self.x) + " Y: " + str(self.y)
 

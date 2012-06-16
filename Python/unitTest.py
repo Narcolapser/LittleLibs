@@ -58,15 +58,21 @@ for phase in phases:
 			args+= ")"
 		else:
 			args = args[:-1]+")"
-		if "+-**/>=<==".find(test['function']) != -1:
-			result = eval('ob '+test['function']+' argvs[0]')
-		else:
-			result = eval("ob."+test['function']+args)
-		if "float int string bool".find(test['result']['testType']) == -1:
+		try:
+			if "+-**/>=<==".find(test['function']) != -1:
+				result = eval('ob '+test['function']+' argvs[0]')
+			else:
+				result = eval("ob."+test['function']+args)
+		except Exception as e:
+			result = e
+
+		if "float int string bool Exception".find(test['result']['testType']) == -1:
 			expect = eval('tmod.'+test['result']['testType']+'FromJson(test["result"])')
+		elif test['result']['testType'] == 'Exception':
+			expect = Exception()
 		else:
 			expect = test['result']['val']
-		if result == expect:
+		if result == expect or (isinstance(result,Exception) and isinstance(expect,Exception)):
 			print "passed: " + test['testName']
 		else:
 			print "fail: "+test['testName'] + ", got: " + str(result) + " expected: " + str(expect)
