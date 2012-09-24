@@ -49,7 +49,7 @@ class Vec2:
 		return math.sqrt(self.Dot(self))
 
 	def Normalize(self):
-		w = self.x + self.y
+		w = math.sqrt(self.x * self.x + self.y * self.y)
 		if w == 0 and self.x == 0: return self
 		self.x /= w
 		self.y /= w
@@ -71,7 +71,7 @@ class Vec3:
 		return Vec3(self.x-val.x,self.y-val.y,self.z-val.z)
 
 	def __eq__(self,val):
-		return self.x == val.x and self.y == val.y and self.z == val.z
+		return self.x == val.x and self.y == val.y and self.z == val.z 
 
 	def __ne__(self,val):
 		return not self == val
@@ -108,7 +108,7 @@ class Vec3:
 
 	def Normalize(self):
 		if(self.y == 0 and self.x == 0 and self.z == 0): return self
-		w = self.x + self.y + self.z
+		w = self.Magnitude()
 		self.x /= w
 		self.y /= w
 		self.z /= w
@@ -129,6 +129,27 @@ class Vec4:
 
 	def __sub__(self,val):
 		return Vec4(self.x-val.x,self.y-val.y,self.z-val.z,self.w-val.w)
+
+	def __eq__(self,val):
+		return self.x == val.x and self.y == val.y and self.z == val.z and self.w == val.w
+
+	def __ne__(self,val):
+		return not self == val
+
+	def __lt__(self,val):
+		return self.x < val.x and self.y < val.y and self.z < val.y and self.w == val.w
+
+	def __le__(self,val):
+		return self < val or self == val
+
+	def __gt__(self,val):
+		return self.x > val.x and self.y > val.y and self.z > val.z and self.w == val.w
+
+	def __ge__(self,val):
+		return self > val or self == val
+
+	def __str__(self):
+		return "X: " + str(self.x) + " Y: " + str(self.y) + " Z: " + str(self.z) + " W: " + str(self.w)
 
 	def Scale(self,val):
 		return Vec4(self.x*val,self.y*val,self.z*val,self.w*val)

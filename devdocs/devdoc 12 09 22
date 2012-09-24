@@ -1,0 +1,12 @@
+I've gotten the linearAlgebra tests completed. As well as the unit test python script, at least so far as I have had problems with any of the tests in the linear algebra library. 
+
+I'm progressing on now to the library for C and the script for C. I've a couple ways in mind for doing this:
+1. All in C. Either make use of JIT compiling and compile and run the C on the fly like I did in python, not likly. Or, make C files, compile it, and run it.
+2. Have a configure script to make the C and make file for compiling. user runs the make, user compiles, and user runs the new unit test program.
+3. Make a python script that handles all the complicated code generation. 
+
+Option one has the advantage of stream lineness. There is one program to call, just like with python. The problem is the sheer complexity behind it.
+
+Option three breaks the purity a lot. I'd like to keep to the language I'm testing in the language I'm testing with. But makes for simplicity of using a very flexible language of python.
+
+Option two is where I've landed. Have a configure program written in C that generates the tests based off of the json. Then the user runs a make file that will compile the generated code into an executable. then the user can execute the tests.

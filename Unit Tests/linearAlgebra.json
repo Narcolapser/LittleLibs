@@ -332,7 +332,7 @@
 			[
 				{"testType":"Vec2","x":5,"y":5}
 			],
-			"result":{"testType":"Vec2","x":0.5,"y":0.5}
+			"result":{"testType":"Vec2","x":0.707106781187,"y":0.707106781187}
 		}
 	]
 	},
@@ -377,6 +377,16 @@
 				{"testType":"float","val":2}
 			],
 			"result":{"testType":"Exception"}
+		},
+		{
+			"testName":	"Normalize on zero",
+			"function":	"Normalize",
+			"argc":		1,
+			"args":
+			[
+				{"testType":"Vec2","x":1,"y":-1}
+			],
+			"result":{"testType":"Vec2","x":0.707106781187,"y":-0.707106781187}
 		}
 	]
 	},
@@ -713,9 +723,20 @@
 			"argc":		"1",
 			"args":
 			[
-				{"testType":"Vec3","x":5,"y":5,"z":5}
+				{"testType":"Vec3","x":2,"y":2,"z":2}
 			],
-			"result":{"testType":"Vec3","x":0.333333333333,"y":0.333333333333,"z":0.333333333333}
+			"result":{"testType":"Vec3","x":0.57735026919,"y":0.57735026919,"z":0.57735026919}
+		},
+		{
+			"testName":	"Cross Product",
+			"function":	"Cross",
+			"argc":		"2",
+			"args":
+			[
+				{"testType":"Vec3","x":5,"y":10,"z":3},
+				{"testType":"Vec3","x":5,"y":2,"z":7}
+			],
+			"result":{"testType":"Vec3","x":64,"y":-20,"z":-40}
 		}
 	]
 	},
@@ -760,6 +781,23 @@
 				{"testType":"float","val":2}
 			],
 			"result":{"testType":"Exception"}
+		}
+	]
+	},
+	{
+	"phaseName":	"Vec4 Common Cases",
+	"tests":
+	[
+		{
+			"testName":	"Vec4 equality",
+			"function":	"==",
+			"argc":		2,
+			"args":
+			[
+				{"testType":"Vec4","x":1,"y":1,"z":1,"w":1},
+				{"testType":"Vec4","x":1,"y":1,"z":1,"w":1}
+			],
+			"result":{"testType":"bool","val":true}
 		}
 	]
 	}
