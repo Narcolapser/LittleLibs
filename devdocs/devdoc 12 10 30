@@ -1,0 +1,3 @@
+I've started working on the python unit test genorator. I'm going to keep this as modular as possible and so my approach is as follows. I will have the python read in the json into phase and unit objects. these will both have calls that are expressly other languages. for example calling unit.python() will return a string that is the unit test for python. calling phase.c() will return a string that is all the unit tests in a phase and associated phase information. 
+
+the over arching class will be called test. so a test class consists of phases, a phase class consists of units, and a unit is a self contained peice of code that tests a function against known values and returns a booling true or false. 
