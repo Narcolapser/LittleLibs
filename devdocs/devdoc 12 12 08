@@ -1,0 +1,11 @@
+Ok, so I can keep my head on straight what I'm doing for this unit test system.
+
+The python script reads in the json described tests. It then proceeds to hold them in a temporary format. Then a request for a specific language is made and the script generates the code for that language based off of the information that was recieved from the json. 
+
+So where I got my self muddled, or muggled i suppose, is I succesfully created a pythons script that imports json to python. not want I want. silly me. But the basic structure is in place. the difficulty lies in the intermediate storage. I need to figure out how to hold the data is a way that is easy to out put into multiple languages.
+
+What I must do is create a new class for each type of object. It will then deal with the polymorphism of the various languages. 
+
+all but 4 of the data types are easy. Object is complicated because of its various creation systems that are required to work properly. List is complicated because it could contian objects in its list. String through bool are simply just store the json value they were handed. Exception and NULL however don't have anything to store. What exactly they need in their construct I don't know yet, but it isn't going to be complicated I'm sure, just not as simple as self.val = val.
+
+

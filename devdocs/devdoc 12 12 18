@@ -1,0 +1,41 @@
+I've started working on how to make the actual tests. I had started making them simply by making the functions that you call with the related arguments and get the value or error back. I pulled up a sample function i made earlier:
+
+	def Dot_product(args):
+		try:
+			result = args[0].Dot(args[1])
+		except Exception as e:
+			result = e
+		if not isinstance(result,float): return False
+		try:
+			if (result != self.result): return False
+		except:
+			pass
+		try:
+			if not (self.result.equals(result)): return False
+		except:
+			return False
+		return True
+
+Here what I did was send the arguments, get the results. checks to make sure the type is correct, make sure the value is correct, and tries it through two different mechanics. What I don't like about this is passing of the arguments. I know the arguments at the time the test is generated, why not have the args local to the test? Language agnostic features are that it must include the check of same value. Because some languages are strictly typed, the type check need not always happen, and the two different equality checks could be condensed to one. New function design:
+
+def simpleAddition__add__():
+	arg0 = 2
+	arg1 = 2
+	exp = 4
+	try:
+		ret = arg0.__add__(arg1)
+	except Exception as e:
+		return e
+
+	if not isinstance(ret,int): return false
+
+	try:
+		if ret != exp: return false
+	except:
+		pass
+
+	try:
+		if not ret.equals(exp): return false
+	except:
+		return false
+	return true

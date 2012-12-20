@@ -1,0 +1,17 @@
+{
+	"type":		"object",
+	"value":	"test",
+	"argc":		5,
+	"args":
+	{
+		"arg0":{"type":"string","value":"simpleAddition"},
+		"arg1":{"type":"string","value":"__add__"},
+		"arg2":{"type":"number","value":2},
+		"arg3":{"type":"list","value":
+		[
+			{"type":"number","value":2},
+			{"type":"number","value":2}
+		]},
+		"arg4":{"type":"number","value":4}
+	}
+}

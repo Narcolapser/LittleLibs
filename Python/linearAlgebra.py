@@ -202,7 +202,7 @@ class Matrix3x3:
 		return Matrix3x3(self.a-val.a,self.b-val.b,self.c+val.c)
 
 class Matrix4x4:
-	def __init__(self,a,b,c):
+	def __init__(self,a,b,c,d):
 		self.a = a
 		self.b = b
 		self.c = c

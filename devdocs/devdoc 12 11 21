@@ -1,0 +1,164 @@
+Rework time. I've done a lot of consideration and have decided I need to change how things work. First of, change in naming convention:
+
+Test:	A single test of functionality. Test one function in one way. For example: it checks to make sure that the add function for arguments 2 and 2 returns 4.
+
+Phase: A collection of tests focused on one aspect of a library. All of the correct functionality cases, or all of the break cases, or the edge cases, etc.
+
+Unit: A collection of phases to cover one entire library. May or may not be comprehensive. They may be "black box" tests where only certain key functionalities are tested.
+
+Battery: a collection of Units all pertaining to a single library or multiple libraries. Batteries should be White box tests. If the specification of the library makes an assertion there ought be a test that checks for that. 
+
+I'm changing the Json to reflect some of this. Firstly, the names will be changing. test are the lowest unit now instead of the highest. Next I'm taking advantage of what Json is designed for, data description. I'm not going to concern myself with automatic testing of complex classes that might deal with network traffic or threading or such that require complicated constructors. if an argument cannot be described in file as a collection of data, not interested in making automated testing for it. I'm introducing the universal concept of objects. Everything will now be self describing, and if something describes itself as an object, it will have an importation function devoted to it as a value. similarly string, number, float, bool, exception, char, and NULL also will have dedicated importation functions.
+
+there are five tags: type, value, argc, argt, args. type is an enum: object, list, string, number, float, bool, exception, char, or NULL. If type is object, than value contains the object type. other wise value contains the information with the data unit. in the case of an object, further values are needed, and these are kept in args and argc. argc numerates the number of arguments to be given as a constructor. args contains the actual arguments. 
+
+Description of objects in json:
+Battery:
+{
+	type:	"object",
+	value:	"battery",
+	argc:	2,
+	args:
+	{
+		arg0:{type:"string",value:"modulename"},
+		arg1:
+		{
+			type: "list",
+			value:
+			[
+				unit,
+				unit,
+				unit,
+				unit
+			]
+		}
+	}
+
+}
+
+Unit:
+{
+	type:	"object",
+	value:	"unit",
+	argc:	2,
+	args:
+	{
+		arg0:{type:"string",value:"modulename"},
+		arg1:
+		{
+			type: "list",
+			value:
+			[
+				phase,
+				phase,
+				phase,
+				phase
+			]
+		}
+	}
+
+}
+
+Phase:
+{
+	type:	"object",
+	value:	"phase",
+	argc:	2,
+	args:
+	{
+		arg0:{type:"string",value:"phaseName"},
+		arg1:
+		{
+			type: "list",
+			value:
+			[
+				test,
+				test,
+				test,
+				test
+			]
+		}
+	}
+}
+
+Test:
+{
+	type:	"object",
+	value:	"test",
+	argc:	5,
+	args:
+	{
+		arg0:{type:"string",value:"testName"},
+		arg1:{type:"string",value:"functionToTest"},
+		arg2:{type:"number",value:2},//argc
+		arg3:{type:"list",value:
+		[
+			{type:"object",value:"Vec2",argc:2,args{arg0:2,arg1:2}},
+			{type:"object",value:"Vec2",argc:2,args{arg0:2,arg1:2}}
+		]}
+		arg4:{type:"object,value:"Vec2","argc":2,"arg0":-5,"arg1":12
+	}
+}
+
+object
+{
+	type:	"object",
+	value:	"objectvalue",
+	argc:	numArgs,
+	args:
+	{
+		arg0:arg,
+		arg1:arg,
+		arg...
+		argn:arg
+	}
+}
+list
+{
+	type:	"list",
+	value:
+	[
+		arg,
+		arg,
+		arg
+	]
+}
+string
+{
+	type:	"string",
+	value:	"arg"
+}
+number
+{
+	type:	"number",
+	value:	123456789
+}
+float
+{
+	type:	"float",
+	value:	"0x1.d6f3454000000p+26"//hex for 123456789.0
+}
+bool
+{
+	type:	"bool",
+	value:	true/false
+}
+exception
+{
+	type:	"exception",
+}
+char
+{
+	type:	"char",
+	value:	"a"
+}
+null
+{
+	type:	"null"
+}
+
+notable ones here:
+exception. This is mostly a place holder for an exception in the testing process. So if there is a a test that ought fail, this is here to allow for that condition.
+Float and number are different things for me. I needed float to provide higher levels of accuracy. Python has the ability to export floats with perfect persission so it can be used for accurate comparisions. So the importation function will need to reflect this.
+
+

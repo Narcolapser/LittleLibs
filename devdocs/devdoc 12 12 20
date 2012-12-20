@@ -1,0 +1,28 @@
+almost made this file "12 12 200" WOOOOOOO! 200th day of december.
+
+I have to add one special case to the ret json. I need to have an equals not equals flag. Because there are cases where you just want to be sure that the result of the function doesn't equal something. so a test now looks like:
+
+Test:
+{
+	type:	"object",
+	value:	"test",
+	argc:	5,
+	args:
+	{
+		arg0:{type:"string",value:"testName"},
+		arg1:{type:"string",value:"functionToTest"},
+		arg2:{type:"number",value:2},//argc
+		arg3:{type:"list",value:
+		[
+			{type:"object",value:"Vec2",argc:2,args{arg0:2,arg1:2}},
+			{type:"object",value:"Vec2",argc:2,args{arg0:2,arg1:2}}
+		]}
+		arg4:{type:"object",value:"Vec2",argc:2,args{arg0:2,arg1:2},ret:"true"}
+	}
+}
+
+also, I had to add another special case into the generated code. In the cases of nulls and exception, there is no value to compare. so as long as a null or an exception is returned, the test is passed.
+
+Got it. it works. it makes a test file that you can then run. I need to add the ability to import, but you also need to move it to the right directory. I can live with that. I want to get on from this blood unit test system to actual code again! But there is one more thing with this system I need to do. I have a huge pile of tests for my linearAlgebra library that need to be convereted to the correct format.
+
+Frustration! oh well. I've got the system made that's what matters. Trying to retrofit those tests might be more trouble that it is worth. I'm going to call it for today. I've gotten a fair bit accomplished so I'm happy.

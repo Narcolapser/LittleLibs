@@ -1,0 +1,126 @@
+{"type":	"object","value":"unit","argc":	2,"args":{
+"arg0":{"type":"string","value":"ints"},
+"arg1":{"type":"list","value":
+[
+
+
+{"type":"object", "value":"phase", "argc":2, "args":{
+"arg0":{"type":"string","value":"simpleArithmaticCommonCase"},
+"arg1":{"type": "list","value":
+	[
+	{
+		"type":		"object",
+		"value":	"test",
+		"argc":		5,
+		"args":
+		{
+			"arg0":{"type":"string","value":"simpleAddition"},
+			"arg1":{"type":"string","value":"__add__"},
+			"arg2":{"type":"number","value":2},
+			"arg3":{"type":"list","value":
+			[
+				{"type":"number","value":2},
+				{"type":"number","value":2}
+			]},
+			"arg4":{"type":"number","value":4}
+		}
+	},
+	{
+		"type":		"object",
+		"value":	"test",
+		"argc":		5,
+		"args":
+		{
+			"arg0":{"type":"string","value":"simpleSubtraction"},
+			"arg1":{"type":"string","value":"__sub__"},
+			"arg2":{"type":"number","value":2},
+			"arg3":{"type":"list","value":
+			[
+				{"type":"number","value":2},
+				{"type":"number","value":2}
+			]},
+			"arg4":{"type":"number","value":0}
+		}
+	}
+	]}}},
+{"type":"object", "value":"phase", "argc":2, "args":{
+"arg0":{"type":"string","value":"simpleArithmaticCommonFailCases"},
+"arg1":{"type": "list","value":
+	[
+	{
+		"type":		"object",
+		"value":	"test",
+		"argc":		5,
+		"args":
+		{
+			"arg0":{"type":"string","value":"simpleAddition"},
+			"arg1":{"type":"string","value":"__add__"},
+			"arg2":{"type":"number","value":2},
+			"arg3":{"type":"list","value":
+			[
+				{"type":"number","value":2},
+				{"type":"number","value":5}
+			]},
+			"arg4":{"type":"number","value":4,"ret":false}
+		}
+	},
+	{
+		"type":		"object",
+		"value":	"test",
+		"argc":		5,
+		"args":
+		{
+			"arg0":{"type":"string","value":"simpleSubtraction"},
+			"arg1":{"type":"string","value":"__sub__"},
+			"arg2":{"type":"number","value":2},
+			"arg3":{"type":"list","value":
+			[
+				{"type":"number","value":2},
+				{"type":"number","value":2}
+			]},
+			"arg4":{"type":"number","value":4,"ret":false}
+		}
+	}
+	]}}},
+{"type":"object", "value":"phase", "argc":2, "args":{
+"arg0":{"type":"string","value":"simpleArithmaticBroken"},
+"arg1":{"type": "list","value":
+	[
+	{
+		"type":		"object",
+		"value":	"test",
+		"argc":		5,
+		"args":
+		{
+			"arg0":{"type":"string","value":"simpleAddition"},
+			"arg1":{"type":"string","value":"__add__"},
+			"arg2":{"type":"number","value":2},
+			"arg3":{"type":"list","value":
+			[
+				{"type":"number","value":2},
+				{"type":"string","value":"two"}
+			]},
+			"arg4":{"type":"exception","ret":true}
+		}
+	},
+	{
+		"type":		"object",
+		"value":	"test",
+		"argc":		5,
+		"args":
+		{
+			"arg0":{"type":"string","value":"simpleSubtraction"},
+			"arg1":{"type":"string","value":"__sub__"},
+			"arg2":{"type":"number","value":2},
+			"arg3":{"type":"list","value":
+			[
+				{"type":"number","value":2},
+				{"type":"null"}
+			]},
+			"arg4":{"type":"exception","ret":true}
+		}
+	}
+	]}}}
+
+]
+}}}
