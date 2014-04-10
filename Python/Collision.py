@@ -84,12 +84,12 @@ def CPonTriangleToPoint(tri,point):
 	if d6 >= 0 and d5 <= d6: return tri.c
 
 	vb = d5*d2 - d1*d6
-	if vb <= 0 and d2 >= 0 and d6 <= 0
+	if vb <= 0 and d2 >= 0 and d6 <= 0:
 		w = d2 / (d2-d6)
 		return tri.a + ac.Scale(w)
 
 	va = d3*d6 - d5*d4
-	if va <= 0 and (d4-d3) >=0 and (d5 - d6) >= 0
+	if va <= 0 and (d4-d3) >=0 and (d5 - d6) >= 0:
 		w = (d4 -d3) / ((d4 -d3) + (d5 -d6))
 		return tri.b + (c-b).Scale(w)
 
@@ -117,9 +117,7 @@ def SphereBehindPlane(sphere, plane):
 	return dist < -sphere.r
 
 def IntersectBoxPlane(box,plane):
-	r = box.e.x*abs(plane.n.Dot(b.u[0])) +
-		box.e.y*abs(plane.n.Dot(b.u[1])) +
-		box.e.z*abs(plane.n.Dot(b.u[2]))
+	r = box.e.x*abs(plane.n.Dot(b.u[0])) + box.e.y*abs(plane.n.Dot(b.u[1])) + box.e.z*abs(plane.n.Dot(b.u[2]))
 
 	s = plane.n.Dot(box.loc) - plane.d
 
@@ -151,7 +149,7 @@ def IntersectSegPlane(seg,plane):
 	ab = seg.b - seg.a
 	t = (plane.d - plane.n.Dot(seg.a))/ plane.n.Dot(ab)
 
-	if( t >= 0 and t <= 1)
+	if( t >= 0 and t <= 1):
 		q = seg.a + ab.Scale(t)
 		return q
 
@@ -170,7 +168,7 @@ def IntersectSegSphere(ray,sphere):
 
 	t = -b - math.sqrt(discr)
 
-	if (t < 0) t = 0
+	if (t < 0): t = 0
 	q = ray.loc + ray.d.Scale(t)
 	return q
 
@@ -193,7 +191,7 @@ def IntersectSegBox(ray,box):
 		tmin = max(tmin,t1)
 		tmax = min(tmax,t2)
 
-		if(tmin>tmax) return 0
+		if(tmin>tmax): return 0
 	
 	if(abs(ray.d.y) < EPSILON):
 		if ray.loc.y < box.min.y or ray.loc.y > box.max.y: return None
@@ -210,7 +208,7 @@ def IntersectSegBox(ray,box):
 		tmin = max(tmin,t1)
 		tmax = min(tmax,t2)
 
-		if(tmin>tmax) return 0
+		if(tmin>tmax): return 0
 
 	if(abs(ray.d.z) < EPSILON):
 		if ray.loc.z < box.min.z or ray.loc.z > box.max.z: return None
@@ -227,7 +225,7 @@ def IntersectSegBox(ray,box):
 		tmin = max(tmin,t1)
 		tmax = min(tmax,t2)
 
-		if(tmin>tmax) return 0
+		if(tmin>tmax): return 0
 
 	q = ray.loc + ray.d.Scale(tmin)
 	return 1	

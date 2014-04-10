@@ -164,8 +164,8 @@ P2= Point( 1, -1, -1)
 P3= Point(-1, -1,  1)
 P = Triangle(P1,P2,P3)
 
-i = IntersectLineTriangle(R,P)
-print "i:", i
+#i = IntersectLineTriangle(R,P)
+#print "i:", i
 
 c = Camera(Point(0,0,2),Point(0,0,-1),.1,10000,90,xRes,yRes,"dotanuki out")
 #c.draw(loadObj('','level.obj'))

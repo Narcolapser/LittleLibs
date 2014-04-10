@@ -159,12 +159,12 @@ def loadObj(path,filename):
 A = Point( 00, 00,-1000.0)
 B = Point( 00, 00, 1000.0)
 R = LineSegment(A,B)
-P1= Point( 0,  1, 0)
-P2= Point( 1, -1, 0)
-P3= Point(-1, -1, 0)
+P1= Point( 0,  1,  0)
+P2= Point( 1, -1, -1)
+P3= Point(-1, -1,  1)
 P = Triangle(P1,P2,P3)
 
-i = IntersectLineTriangle(R,P)
+#i = IntersectLineTriangle(R,P)
 print "i:", i
 
 c = Camera(Point(0,0,2),Point(0,0,-1),.1,10000,90,xRes,yRes,"dotanuki out")
