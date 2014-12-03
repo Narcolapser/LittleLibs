@@ -1,0 +1,59 @@
+Stack:
+	Functions:
+		Push
+		Pop
+		Peek
+		
+	Variations:
+		Array Stack
+		Linked Stack
+
+Lists:
+	Array List
+	Linked Lists
+	skip list
+	unrolled-linked list
+	XOR linked list
+	Association list
+array:
+	bit array
+	circular buffer
+	dynamic array
+	hash table
+	hashed array tree
+	Sparse array
+Disjoint set
+Set
+Associative array
+Double-ended priority queue
+double-ended queue
+list
+map
+multimap
+Queue
+Deque
+Hashmap
+Heap
+	Binary
+	binomial
+	Fibonacci
+Tree
+	binary
+		AA
+		AVL
+		red-black
+		self-balancing
+		splay
+	2-3 tree
+	2-3-4 tree
+	finger tree
+	B-Tree
+	Trie
+	R-tree
+		r*
+		r+
+		hilbert
+graph
+	binary decision diagram
+	directed acyclic graph
+	directed acyclic word graph

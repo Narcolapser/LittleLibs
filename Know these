@@ -1,0 +1,13 @@
+Here is a list of functions I want to know. I should be able to know these off the top of my head and know when to use which. But most importantly I should know the nuances that come along with them:
+
+Malloc
+	Short for "Memory Allocoation", because back when it was made, keeping your code lexically small mattered. It will return a pointer to a void array of the size_t requested. Frequently, and most intelligently, gets called like:
+	malloc(sizeof(type)*length).
+
+Calloc
+	Similar to Malloc, can stand for "cleared allocation". Calloc will return a pointer to a void array of size times num. Unlike malloc it will also initialize the memory in the array to be 0's all the way through. It gets prefered for that reason, a dependable allocation. But also remember it takes to arguments: num, size. Num being the number of elements in your array(length), and size being the size of each element.
+	calloc(length,sizeof(type))
+
+Realloc
+	Realloc, or "re-allocate" will adjust the size of an allocation. Sending it a pointer to an array and a size and it will fix it. It tries first to do it in place, but if there is no room to expand the array, it will move the whole thing, retaining all the information. If the new size is smaller than the old, the array is truncated. if the new size is zero, the array is deallocated (C90) or just set to a null pointer (C11). This should not be considered an alternative to "free" despite the similar behavior. If a null pointer is sent as the array, it would be the same as calling malloc.
+	realloc(ptr,sizeof(type)*length)

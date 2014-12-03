@@ -24,10 +24,10 @@ typedef struct vec4
 	float w;
 }Vec4;
 
-class Vec2:
-	def __init__(self,x,y):
-		self.x = x * 1.0
-		self.y = y * 1.0
+//class Vec2:
+//	def __init__(self,x,y):
+//		self.x = x * 1.0
+//		self.y = y * 1.0
 
 Vec2* add(Vec2* self, Vec2* val)
 {
